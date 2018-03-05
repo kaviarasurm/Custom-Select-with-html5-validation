@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Select</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="jquery.mCustomScrollbar.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="jquery.selectBox.css" type="text/css" media="screen" />
+	<style>
+		html,*,*:before,*:after{
+			box-sizing: border-box;
+		}
+		*:before,*:after{
+			content: '';
+			box-sizing: inherit;
+		}
+		select {
+			display: block!important;
+			position: absolute;
+			z-index: -1;
+			-webkit-appearance: none;
+		}
+		.select-cover{
+			position: relative;
+			    margin: 20px 0;
+		}
+		.inputBox-lable{
+			position: absolute;
+			top: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>	
+	<div id="">
+		<form method="post" style="width:200px;">
+			<div class="col-md-6 col-sm-12 inputField">
+				<div class="select-cover mob_true_cover">
+					<select id="trip-kind" required name="trip-kind" class="select mob_true" data-cost="" data-error="Please select one">
+						<option selected="selected" value="" hidden>Please select</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+						<option value="Option1">Option1</option>
+					</select>
+					<span class="err_msg"></span>
+				</div>																	
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script type="text/javascript" src="jquery.selectBox.js"></script>
+	<script type="text/javascript" src="jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<script type="text/javascript">
+		$(document).ready(function(){
+		
+			$('select.mob_true').selectBox({ 
+				mobile: true, 
+				menuSpeed: 'fast', 
+				menuTransition: 'fade' 
+			}); 
+			$(".selectBox-dropdown-menu").mCustomScrollbar({ 
+				live:true, 
+				theme:"inset-dark" 
+			});	
+			$('.select.mob_true').on('click', function () {
+				$(".selectBox-dropdown-menu").css('width',$(this).outerWidth());
+			});
+		});
+		
+</script>
+</body>
+</html>
